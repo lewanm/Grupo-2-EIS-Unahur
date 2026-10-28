@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ck5a8xg7to7c2"]
+
+[ext_resource type="Script" uid="uid://eulwu42b014x" path="res://Grilla/Scripts/Visual/item.gd" id="1_lft5x"]
+
+[node name="Item" type="Sprite2D" unique_id=595347924]
+script = ExtResource("1_lft5x")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c5p43tpf7i4fg"]
+
+[ext_resource type="Script" uid="uid://x0iaucbqh0di" path="res://Grilla/Scripts/Datos/item_data.gd" id="1_ccsrd"]
+
+[resource]
+script = ExtResource("1_ccsrd")
+metadata/_custom_type_script = "uid://x0iaucbqh0di"
