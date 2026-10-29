@@ -49,7 +49,7 @@ func _agarrar_item_bajo_el_mouse() -> void:
 func _soltar_item(item_agarrado: Node) -> void:
 	var punto = Vector2i(item_agarrado.ancla) + Vector2i.ONE * (TAMAÑO_SLOT / 2)
 	var index = get_index_casilla_desde_coordenadas(punto)
-	if index == -1 or not item_entra(index, item_agarrado.data.dimensiones):
+	if index == -1 or not item_entra(index, item_agarrado.dimensiones):
 		return
 	llenar_data_casilla(item_agarrado, index)
 	item_agarrado.colocar(get_coordenadas_desde_index_casilla(index))
@@ -58,7 +58,7 @@ func _soltar_item(item_agarrado: Node) -> void:
 func intentar_agregar_item_data(item: Node) -> bool:
 	var index_casilla: int = 0
 	while index_casilla < data_casilla.size():
-		if item_entra(index_casilla, item.data.dimensiones):
+		if item_entra(index_casilla, item.dimensiones):
 			break
 		index_casilla += 1
 	if index_casilla >= data_casilla.size():
@@ -70,8 +70,8 @@ func intentar_agregar_item_data(item: Node) -> bool:
 
 
 func llenar_data_casilla(item: Node, index: int) -> void:
-	for y in item.data.dimensiones.y:
-		for x in item.data.dimensiones.x:
+	for y in item.dimensiones.y:
+		for x in item.dimensiones.x:
 			data_casilla[index + x + y * columns] = item
 
 

@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://x0iaucbqh0di" path="res://Grilla/Scripts/Datos/item_data.gd" id="2_rf6od"]
 [ext_resource type="Texture2D" uid="uid://cedlxvu4ewphr" path="res://Grilla/Assets/ItemOrange.png" id="3_egqu4"]
 [ext_resource type="Texture2D" uid="uid://li0nllsmjtjq" path="res://Grilla/Assets/ItemGreen.png" id="4_s6ksn"]
+[ext_resource type="Texture2D" uid="uid://0sno1oi6ly57" path="res://Grilla/Assets/ItemPurple.png" id="5_8icrg"]
+[ext_resource type="Texture2D" uid="uid://cw5d8287sq6a8" path="res://Grilla/Assets/ItemPink.png" id="6_qxa1s"]
 
 [sub_resource type="Resource" id="Resource_rf6od"]
 script = ExtResource("2_rf6od")
@@ -20,6 +22,20 @@ script = ExtResource("2_rf6od")
 nombre = "GreenItem"
 texture = ExtResource("4_s6ksn")
 dimensiones = Vector2i(4, 2)
+metadata/_custom_type_script = "uid://x0iaucbqh0di"
+
+[sub_resource type="Resource" id="Resource_auoqk"]
+script = ExtResource("2_rf6od")
+nombre = "PurpleItem"
+texture = ExtResource("5_8icrg")
+dimensiones = Vector2i(2, 5)
+metadata/_custom_type_script = "uid://x0iaucbqh0di"
+
+[sub_resource type="Resource" id="Resource_s6ksn"]
+script = ExtResource("2_rf6od")
+nombre = "PinkItem"
+texture = ExtResource("6_qxa1s")
+dimensiones = Vector2i(2, 2)
 metadata/_custom_type_script = "uid://x0iaucbqh0di"
 
 [node name="InventarioGrilla" type="Control" unique_id=639028448]
@@ -36,7 +52,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_efp76")
-items = Array[ExtResource("2_rf6od")]([SubResource("Resource_rf6od"), SubResource("Resource_egqu4")])
+items = Array[ExtResource("2_rf6od")]([SubResource("Resource_rf6od"), SubResource("Resource_egqu4"), SubResource("Resource_auoqk"), SubResource("Resource_s6ksn")])
 item_scene = ExtResource("2_fq556")
 
 [node name="Grilla" type="GridContainer" parent="Inventario" unique_id=662261994]

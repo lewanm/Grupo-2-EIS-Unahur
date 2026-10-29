@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://pjwyk6ycpejl"]
+
+[ext_resource type="Script" uid="uid://dju8l5ghc06f2" path="res://Grilla/Scripts/Visual/inventario.gd" id="1_efp76"]
+[ext_resource type="Script" uid="uid://cp05ixukuenfp" path="res://Grilla/Scripts/Visual/grilla.gd" id="1_fq7lf"]
+[ext_resource type="PackedScene" uid="uid://c8y2ce3kqchib" path="res://Grilla/Objetos/casilla.tscn" id="2_0a3j7"]
+[ext_resource type="PackedScene" uid="uid://ck5a8xg7to7c2" path="res://Grilla/Objetos/item.tscn" id="2_fq556"]
+[ext_resource type="Script" uid="uid://x0iaucbqh0di" path="res://Grilla/Scripts/Datos/item_data.gd" id="2_rf6od"]
+[ext_resource type="Texture2D" uid="uid://cedlxvu4ewphr" path="res://Grilla/Assets/ItemOrange.png" id="3_egqu4"]
+[ext_resource type="Texture2D" uid="uid://li0nllsmjtjq" path="res://Grilla/Assets/ItemGreen.png" id="4_s6ksn"]
+
+[sub_resource type="Resource" id="Resource_rf6od"]
+script = ExtResource("2_rf6od")
+nombre = "OrangeItem"
+texture = ExtResource("3_egqu4")
+dimensiones = Vector2i(2, 1)
+metadata/_custom_type_script = "uid://x0iaucbqh0di"
+
+[sub_resource type="Resource" id="Resource_egqu4"]
+script = ExtResource("2_rf6od")
+nombre = "GreenItem"
+texture = ExtResource("4_s6ksn")
+dimensiones = Vector2i(4, 2)
+metadata/_custom_type_script = "uid://x0iaucbqh0di"
+
+[node name="InventarioGrilla" type="Control" unique_id=639028448]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventario" type="PanelContainer" parent="." unique_id=228304042]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_efp76")
+items = Array[ExtResource("2_rf6od")]([SubResource("Resource_rf6od"), SubResource("Resource_egqu4")])
+item_scene = ExtResource("2_fq556")
+
+[node name="Grilla" type="GridContainer" parent="Inventario" unique_id=662261994]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_fq7lf")
+casilla_scene = ExtResource("2_0a3j7")
+dimensiones = Vector2i(5, 15)
